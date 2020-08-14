@@ -10,6 +10,7 @@ on:
 
 jobs:
   lint-test:
+    if: github.event_name == 'pull_request'
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -35,6 +36,7 @@ jobs:
           command: install
 
   release:
+    if: github.event_name == 'push'
     needs: lint-test
     runs-on: ubuntu-latest
     steps:
