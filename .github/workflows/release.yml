@@ -1,10 +1,6 @@
 name: Release Helm Charts
 
-on: pull_request
-
-on: push
-  branches:
-    - master
+on: [push, pull_request]
 
 jobs:
   lint-test:
